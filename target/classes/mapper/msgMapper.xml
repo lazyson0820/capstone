@@ -1,0 +1,19 @@
+<!-- DTD 선언 -->
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.ac.hansung.cse.mapper.msgMapper">
+	 
+	<!-- 메시지  전송-->
+	<insert id="msgSend">
+		insert into msg(userSend, userReceive, msg)
+		values(#{userSend}, #{userReceive}, #{msg})
+	</insert>
+	
+	<!-- 메시지 불러오기 -->
+	<select id="msgRead" resultType="kr.ac.hansung.cse.vo.MsgVO">
+		select * from msg
+	</select>
+		
+</mapper>

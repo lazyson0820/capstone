@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- DTD 선언 -->
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.ac.hansung.cse.mapper.memberMapper">
+	 
+	<!-- 회원 가입 -->
+	<insert id="register">
+		insert into myMember(userId, userPass, userName, userPhone, userAddr1, userAddr2, userAddr3)
+		values(#{userId}, #{userPass}, #{userName}, #{userPhone}, #{userAddr1}, #{userAddr2}, #{userAddr3})
+	</insert>
+	
+	<!-- 로그인 -->
+	<select id="memberLogin" parameterType="kr.ac.hansung.cse.vo.MemberVO" resultType="kr.ac.hansung.cse.vo.MemberVO">
+		select * from mymember where userId = #{userId} and userPass = #{userPass}
+	</select>
+	
+</mapper>
+
